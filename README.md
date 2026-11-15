@@ -112,7 +112,7 @@ each developer's computer, and a Claude project for planning.
 
 ## About this copy
 
-This is a snapshot of the team's private development repository at commit `c4773ef` (2026-11-15), published without
+This is a snapshot of the team's private development repository at commit `2357b27` (2026-11-15), published without
 its commit history. Internal planning notes and progress logs, which name team members, are left out.
 
 ## License
