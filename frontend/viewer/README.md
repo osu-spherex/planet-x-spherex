@@ -56,7 +56,7 @@ Tests sit next to the code as `*.test.ts(x)` and run with `npm test`.
 - `saturated: true` → warning; `motion.status` other than `"ok"` → "Not a confirmed measurement" with A's note.
 - Light curves only compare images in one wavelength bin (LVF: every image sees the star at its own wavelength).
 
-## Motion search (B-05; was "Planet X mode", renamed in P-10, issue #94)
+## Motion search (B-05; renamed in P-10, issue #94)
 
 | File | What |
 | --- | --- |

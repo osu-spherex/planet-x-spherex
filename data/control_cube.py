@@ -1,6 +1,6 @@
 """Control cube for the velocity search: blank sky next to WISE 0855, same exposures (GitHub issue #21).
 
-The "Planet X mode" (frontend/search/grid.ts) tries many motion vectors and keeps the brightest
+The motion search (frontend/search/grid.ts) tries many motion vectors and keeps the brightest
 stack. Trying many vectors on pure noise also produces a brightest stack, so a detection only
 means something if the same search on empty sky gives clearly less. This cube is that empty sky.
 

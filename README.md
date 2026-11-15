@@ -113,7 +113,10 @@ each developer's computer, and a Claude project for planning.
 ## About this copy
 
 This is a snapshot of the team's private development repository at commit `2357b27` (2026-11-15), published without
-its commit history. Internal planning notes and progress logs, which name team members, are left out.
+its commit history. Internal planning notes and progress logs, which name team members, are left out. Two lines of
+comments (in `data/control_cube.py` and `frontend/viewer/README.md`) still used an earlier name of the motion search;
+they are reworded in this copy. Apart from those two lines and this README, the files here are as they are in that
+commit.
 
 ## License
 
