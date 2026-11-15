@@ -1,0 +1,179 @@
+/* /method: "How it works" (task P-08). Same dark palette as the home page (page.module.css). */
+
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+  overflow-wrap: break-word;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.main a {
+  color: var(--gold);
+}
+
+.title {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.section {
+  margin: 0 0 36px;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.section h3 {
+  margin: 22px 0 8px;
+  font-size: 1.02rem;
+}
+
+.section p,
+.section li {
+  max-width: 68ch;
+}
+
+.section p {
+  margin: 0 0 12px;
+}
+
+.section ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.section li {
+  margin-bottom: 6px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.formula {
+  display: block;
+  margin: 6px 0;
+  padding: 6px 10px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 0.88rem;
+}
+
+/* Result cards instead of a wide table: no horizontal scrolling on a 375 px phone. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.card h4 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+}
+
+.cardSub {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 10px;
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+}
+
+.facts dt {
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.verdict {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  border: 1px solid;
+}
+
+/* Same colours as the viewer's "How sure is this?" messages (viewer/Viewer.module.css). */
+.detected {
+  color: var(--ok);
+  border-color: var(--ok-line);
+}
+
+.consistent {
+  color: var(--warn);
+  border-color: var(--warn-line);
+}
+
+.none {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.footer {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* IRSA's SPHEREx acknowledgement (issue #116): its own line under the data item. */
+.acknowledgement {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+}

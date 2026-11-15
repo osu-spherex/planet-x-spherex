@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+data/cache/
+*.fits
+node_modules/
+.next/
+.env
+.claude/worktrees/
+backend/.cache/
+frontend/public/cubes/
+data/cache_dr1/
+data/cache_control/
+data/cache_fov/

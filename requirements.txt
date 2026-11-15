@@ -1,0 +1,8 @@
+astropy>=7.0
+astroquery>=0.4.10
+pyvo>=1.6
+reproject>=0.14
+numpy>=2.0
+scipy>=1.11  # data/motion.py (least_squares, erf); also a dependency of reproject
+matplotlib>=3.9
+pytest>=8.0

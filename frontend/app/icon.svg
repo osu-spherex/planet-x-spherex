@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Site icon (task B-16, issue #111), drawn by Team OSU: a star seen at two visits, the
+       cold / warm pair of the "Compare visits" difference image, with its track (earlier = cold,
+       later = warm; colours of app/globals.css, task A-18). -->
+  <rect width="32" height="32" rx="3" fill="#0e0b0c"/>
+  <path d="M10.5 21.5 L21.5 10.5" stroke="#7d6f67" stroke-width="1.6" stroke-dasharray="2 2" stroke-linecap="round"/>
+  <circle cx="10" cy="22" r="5" fill="#7fd6e6"/>
+  <circle cx="22" cy="10" r="5" fill="#ff7a3d"/>
+  <circle cx="27" cy="25" r="1.2" fill="#b0a196"/>
+  <circle cx="5" cy="6" r="0.9" fill="#b0a196"/>
+</svg>

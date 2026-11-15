@@ -1,0 +1,4 @@
+# Append-only logs: several sessions add lines at the end at the same time.
+# "union" keeps both sides on a local `git merge origin/main` instead of raising a conflict.
+docs/DECISIONS.md merge=union
+docs/progress/*.md merge=union

@@ -1,0 +1,12 @@
+# Vercel CLI uploads (deploy/README.md, fallback path). Keep the 3 GB cache and local envs out.
+# Do NOT list .git here: this file is also applied to Git-integration builds, and without .git the
+# ignoreCommand in frontend/vercel.json (git diff) cannot run. The CLI never uploads .git anyway.
+.venv
+data/cache
+backend/.cache
+experiments
+**/node_modules
+**/.next
+frontend/public/cubes
+**/__pycache__
+*.fits

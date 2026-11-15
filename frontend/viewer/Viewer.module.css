@@ -1,0 +1,963 @@
+.viewer {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.badge {
+  padding: 1px 8px;
+  border: 1px solid var(--warn-line);
+  border-radius: var(--radius);
+  color: var(--warn);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  background: #000;
+  overflow: hidden;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Show the real pixels: no smoothing when the 61 x 61 image is enlarged. */
+  image-rendering: pixelated;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlay line,
+.overlay polyline {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.5px;
+  stroke-linecap: square;
+}
+
+.centre line {
+  stroke: var(--warn);
+}
+
+.annotation line,
+.annotation polyline {
+  stroke: #fff;
+}
+
+.annotation text {
+  fill: #fff;
+  font-size: 2.3px;
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: rgb(0 0 0 / 0.75);
+  stroke-width: 0.6px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls button {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  border-color: var(--warm);
+}
+
+.controls button:focus-visible,
+.slider:focus-visible,
+.options select:focus-visible,
+.options input:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.controls .play {
+  min-width: 72px;
+  background: var(--warm);
+  border-color: var(--warm);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.slider {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  accent-color: var(--warm);
+}
+
+.count {
+  min-width: 4.5em;
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.info span {
+  color: var(--muted);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  font-size: 0.9rem;
+}
+
+.options select {
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+
+.options input[type="checkbox"] {
+  accent-color: var(--warm);
+}
+
+.legend {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 2px;
+  border: 1px solid var(--muted);
+  vertical-align: -0.1em;
+}
+
+.error {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--bad-line);
+  border-radius: var(--radius);
+  color: var(--bad);
+}
+
+/* ---- B-02: view tabs and "Compare visits" ---- */
+
+.tabs,
+.segmented {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tabs button,
+.segmented button {
+  flex: 1;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tabs button[aria-selected="true"],
+.segmented button[aria-pressed="true"] {
+  background: var(--surface-2);
+  color: inherit;
+  font-weight: 500;
+}
+
+.tabs button:focus-visible,
+.segmented button:focus-visible,
+.pickers select:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.compare {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pickers {
+  display: grid;
+  gap: 6px;
+}
+
+.pickers label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.pickers select {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.pickTag {
+  width: 1.2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.stageTag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 0 7px;
+  border-radius: var(--radius);
+  background: rgb(0 0 0 / 0.65);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+/* ---- B-03: Stack tab ---- */
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.figure figcaption {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.peakMark {
+  fill: none;
+  stroke: #4ade80;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.motionRow {
+  display: grid;
+  grid-template-columns: 6.5em 1fr 5.2em;
+  align-items: center;
+  gap: 8px;
+}
+
+.motionLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.motionLabel span {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.number {
+  width: 100%;
+  height: 36px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.number:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.controls button[aria-pressed="true"]:not(.play) {
+  border-color: var(--warm);
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* Buttons keep their natural width and move to the next line instead of shrinking; a label wider
+   than the whole row (e.g. "Catalogue (Gaia DR3 (eps Ind A, common proper motion))") wraps inside the
+   button, so the page never scrolls sideways on a phone (issue #41). */
+.wrap button {
+  flex: 0 1 auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+/* ---- B-04: Measure tab ---- */
+
+.measureSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.measureSection h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.bigNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.bigNumbers strong {
+  font-size: 1.15rem;
+}
+
+.notice,
+.warning {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.notice {
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.warning {
+  border: 1px solid var(--warn-line);
+  color: var(--warn);
+}
+
+.charts {
+  display: grid;
+  /* B-15 (#92): one chart per row; side by side the text shrank to about 7 px. */
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.chart {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Only the outer chart svg: the nested plot-area svg (charts.tsx) must keep its own width / height
+   attributes, or the motion lines are drawn stretched against the axes (found in B-17). */
+.chart > svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.chart figcaption strong {
+  color: inherit;
+  font-weight: 500;
+}
+
+.chartFrame {
+  fill: var(--bg);
+  stroke: var(--line);
+}
+
+.chartGrid {
+  stroke: var(--surface);
+}
+
+.chartAxis {
+  stroke: var(--muted);
+}
+
+.chartTick {
+  fill: var(--muted);
+  font-size: 10.5px; /* about 11 px on a 375 px phone, the narrowest chart (B-15, #92) */
+}
+
+.chartLabel {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.chartKey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+}
+
+.chartKey i {
+  display: inline-block;
+  width: 12px;
+  height: 3px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.dashKey {
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 6px);
+  mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 6px);
+}
+
+/* ---- B-05: Planet X search ---- */
+
+.regionMark {
+  fill: none;
+  stroke: var(--warn);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.progress {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent) 0 0 / 40% 100% no-repeat, var(--line);
+  animation: progress-slide 1.2s linear infinite;
+}
+
+@keyframes progress-slide {
+  from {
+    background-position: -40% 0, 0 0;
+  }
+  to {
+    background-position: 140% 0, 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    animation: none;
+    background: var(--warm);
+    opacity: 0.5;
+  }
+}
+
+.heatWrap {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  gap: 4px;
+  max-width: 360px;
+}
+
+.heatYLabel {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  align-self: center;
+  justify-self: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.heatPlot {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.heatXTicks {
+  position: relative;
+  height: 1.1em;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.heatXTicks span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.heatXLabel {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.heatMarks line {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.heatBest {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+
+.heatCat {
+  fill: none;
+  stroke: #ff8a65;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+
+.heatCur {
+  fill: #ff4fd8;
+}
+
+.chartKeyLine {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.gradient {
+  display: inline-block;
+  width: 60px;
+  height: 0.7em;
+  margin-right: 6px;
+  vertical-align: -0.05em;
+}
+
+.keyRing,
+.keyDiamond,
+.keyDot {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: -0.05em;
+}
+
+.keyRing {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.keyDiamond {
+  border: 2px solid #ff8a65;
+  transform: rotate(45deg) scale(0.8);
+}
+
+.keyDot {
+  border-radius: 50%;
+  background: #ff4fd8;
+  transform: scale(0.6);
+}
+
+.success {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--ok-line);
+  border-radius: var(--radius);
+  color: var(--ok);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* ---- B-06: search progress ---- */
+
+.progressRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--warm);
+}
+
+/* ---- B-07: catalogue and flag layers ---- */
+
+.catGaia,
+.catWise {
+  pointer-events: auto;
+  fill: none;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.catGaia circle,
+.catGaia line,
+.catGaia rect {
+  stroke: #4ade80;
+  vector-effect: non-scaling-stroke;
+}
+
+.catWise rect,
+.catWise line,
+.catWise circle {
+  stroke: #ff8a65;
+  vector-effect: non-scaling-stroke;
+}
+
+.catGaia .catArrowHead {
+  fill: #4ade80;
+}
+
+.catWise .catArrowHead {
+  fill: #ff8a65;
+}
+
+.keyGaia,
+.keyWise {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 2px;
+  vertical-align: -0.05em;
+}
+
+.keyGaia {
+  border: 2px solid #4ade80;
+  border-radius: 50%;
+}
+
+.keyWise {
+  border: 2px solid #ff8a65;
+}
+
+/* ---- B-08: full spectrum and detector picker ---- */
+
+.bandKey {
+  display: inline-block;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+
+.bandKey i {
+  display: inline-block;
+  width: 12px;
+  height: 3px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.bandPicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bandPicker select {
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+/* ---- B-10: usable catalogue layer ---- */
+
+.catGaia .catHit,
+.catWise .catHit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
+
+.catGaia,
+.catWise {
+  cursor: pointer;
+  outline: none;
+}
+
+.catSelected circle:not(.catHit),
+.catSelected rect,
+.catSelected line,
+.catGaia:focus-visible circle:not(.catHit),
+.catGaia:focus-visible rect,
+.catWise:focus-visible circle:not(.catHit),
+.catWise:focus-visible rect {
+  stroke: #fff;
+  stroke-width: 2.5px;
+}
+
+/* B-15 (#91): a dark rim so the white selected mark shows on a saturated (white) star. */
+.catSelected,
+.catGaia:focus-visible,
+.catWise:focus-visible {
+  filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000);
+}
+
+.catPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.picked {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.picked p {
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
+/* ---- issue #75: detectors where the target is not seen ---- */
+
+.tight {
+  margin: 0;
+}
+
+.reasonList {
+  margin: 4px 0 6px;
+  padding-left: 18px;
+}
+
+.reasonList li {
+  margin: 2px 0;
+  overflow-wrap: anywhere;
+}
+
+.reasonDetails {
+  margin: 4px 0;
+  font-size: 0.85em;
+}
+
+.reasonDetails summary {
+  cursor: pointer;
+}
+
+/* ---- B-12: all six detectors ---- */
+
+.sixGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .sixGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sixTile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  min-width: 0;
+}
+
+button.sixTile {
+  cursor: pointer;
+}
+
+button.sixTile:hover .stage,
+button.sixTile:focus-visible .stage {
+  border-color: var(--warm);
+}
+
+.sixCurrent .stage {
+  border-color: var(--warn);
+}
+
+.sixMissing {
+  justify-content: center;
+  min-height: 60px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 6px;
+}
+
+.sixCaption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.sixCaption strong {
+  color: inherit;
+}
+
+/* B-15 (#90): pipeline details under the image info line. */
+.infoDetails {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.infoDetails summary {
+  cursor: pointer;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.infoDetails ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+
+/* B-15 (#92): scale-bar and N / E labels at a fixed size over any panel width. */
+.skyLabel {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 2px #000;
+  pointer-events: none;
+}
+
+/* ---- A-18: the look of the site (tokens in app/globals.css) ---- */
+
+/* Tabs as a ruled strip: the chosen view is underlined with the accent, not filled or bold. */
+.tabs {
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.tabs button {
+  min-height: 40px;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--muted);
+}
+
+.tabs button:hover {
+  color: var(--fg);
+}
+
+.tabs button[aria-selected="true"] {
+  background: transparent;
+  color: var(--fg);
+  border-bottom-color: var(--warm);
+  font-weight: 500;
+}
+
+/* One line under the tabs: what this view shows. */
+.tabHint {
+  margin: -2px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* Coordinates, dates and counts in the line above the tabs read as an instrument's display. */
+.header {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+/* Values the eye should find first (the measured motion, the image counter) take the gold of
+   numbers; headings inside the viewer stay in the text colour. */
+.bigNumbers strong,
+.count {
+  color: var(--gold);
+  font-family: var(--mono);
+}
+
+/* Tab names stay on one line on a phone: widths follow the words instead of four equal parts. */
+.tabs button {
+  flex: 1 1 auto;
+  padding: 0 8px;
+  white-space: nowrap;
+}

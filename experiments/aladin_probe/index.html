@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Aladin probe</title></head>
+<body style="margin:0;background:#111;color:#eee;font-family:sans-serif">
+<div id="al" style="width:700px;height:500px"></div><pre id="log"></pre>
+<script type="module">
+import A from "https://cdn.jsdelivr.net/npm/aladin-lite@3/dist/aladin.js";
+const log=m=>{document.getElementById('log').textContent+=m+"\n"; console.log('PROBE '+m)};
+window.onerror=(m)=>log('ERR '+m);
+A.init.then(()=>{
+  log('init ok, version '+(A.version||'?'));
+  const al=A.aladin('#al',{target:'269.4464 4.7666',fov:0.15,cooFrame:'ICRS',showLayersControl:false,showSimbadPointerControl:false,
+     survey:'https://irsa.ipac.caltech.edu/data/hips/CDS/2MASS/Color'});
+  const cat=A.catalog({name:'test',sourceSize:14,color:'#ff4'});
+  al.addCatalog(cat); cat.addSources([A.source(269.4464,4.7666,{name:'Barnard 2025'}),A.source(269.43868,4.78653,{name:'ref star'})]);
+  window.al=al; log('aladin created');
+}).catch(e=>log('INIT FAIL '+e));
+</script></body></html>

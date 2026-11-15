@@ -1,0 +1,190 @@
+{
+ "object": "barnard",
+ "parallax_arcsec": 0.54698,
+ "parallax_source": "Gaia DR3 4472832130942575872",
+ "note": "Proper motion from the positions of the source in each visit, in arcsec per year (pm_ra is on the sky, times cos(dec)). The yearly parallax swing of the catalogue parallax is taken out before the line is fitted; no_parallax is the same fit without that. parallax_fit leaves the parallax free. Detectors 1 and 4, 2 and 5, 3 and 6 share their pointings.",
+ "detectors": [
+  {
+   "band": "D1",
+   "status": "ok",
+   "n_epochs": 4,
+   "pm_ra": -1.495,
+   "err_ra": 1.432,
+   "pm_dec": 9.931,
+   "err_dec": 0.463,
+   "no_parallax": {
+    "pm_ra": -1.382,
+    "pm_dec": 9.969,
+    "err_ra": 1.538,
+    "err_dec": 0.514
+   },
+   "parallax_fit": {
+    "parallax_arcsec": 0.573,
+    "err": 0.731,
+    "pm_ra": -1.5,
+    "pm_dec": 9.929,
+    "err_ra": 1.974,
+    "err_dec": 0.473,
+    "chi2": 16.34,
+    "dof": 3
+   }
+  },
+  {
+   "band": "D2",
+   "status": "ok",
+   "n_epochs": 3,
+   "pm_ra": -2.729,
+   "err_ra": 1.26,
+   "pm_dec": 10.185,
+   "err_dec": 0.88,
+   "no_parallax": {
+    "pm_ra": -2.894,
+    "pm_dec": 10.197,
+    "err_ra": 1.112,
+    "err_dec": 0.721
+   },
+   "parallax_fit": {
+    "parallax_arcsec": -0.797,
+    "err": 1.188,
+    "pm_ra": -3.133,
+    "pm_dec": 10.216,
+    "err_ra": 3.632,
+    "err_dec": 0.599,
+    "chi2": 10.57,
+    "dof": 1
+   }
+  },
+  {
+   "band": "D3",
+   "status": "ok",
+   "n_epochs": 4,
+   "pm_ra": -2.074,
+   "err_ra": 1.101,
+   "pm_dec": 10.404,
+   "err_dec": 0.622,
+   "no_parallax": {
+    "pm_ra": -2.088,
+    "pm_dec": 10.378,
+    "err_ra": 1.101,
+    "err_dec": 0.536
+   },
+   "parallax_fit": {
+    "parallax_arcsec": -0.082,
+    "err": 0.606,
+    "pm_ra": -2.09,
+    "pm_dec": 10.374,
+    "err_ra": 1.782,
+    "err_dec": 0.468,
+    "chi2": 7.86,
+    "dof": 3
+   }
+  },
+  {
+   "band": "D4",
+   "status": "ok",
+   "n_epochs": 4,
+   "pm_ra": -0.813,
+   "err_ra": 2.07,
+   "pm_dec": 9.935,
+   "err_dec": 0.422,
+   "no_parallax": {
+    "pm_ra": -0.642,
+    "pm_dec": 10.023,
+    "err_ra": 2.278,
+    "err_dec": 0.337
+   },
+   "parallax_fit": {
+    "parallax_arcsec": 0.147,
+    "err": 0.875,
+    "pm_ra": -0.688,
+    "pm_dec": 10.0,
+    "err_ra": 2.257,
+    "err_dec": 0.507,
+    "chi2": 31.42,
+    "dof": 3
+   }
+  },
+  {
+   "band": "D5",
+   "status": "ok",
+   "n_epochs": 3,
+   "pm_ra": -0.781,
+   "err_ra": 0.857,
+   "pm_dec": 10.317,
+   "err_dec": 0.226,
+   "no_parallax": {
+    "pm_ra": -2.828,
+    "pm_dec": 10.313,
+    "err_ra": 0.188,
+    "err_dec": 0.149
+   },
+   "parallax_fit": {
+    "parallax_arcsec": 0.017,
+    "err": 0.11,
+    "pm_ra": -2.765,
+    "pm_dec": 10.313,
+    "err_ra": 0.454,
+    "err_dec": 0.149,
+    "chi2": 0.0,
+    "dof": 1
+   }
+  },
+  {
+   "band": "D6",
+   "status": "ok",
+   "n_epochs": 4,
+   "pm_ra": -0.97,
+   "err_ra": 0.555,
+   "pm_dec": 10.464,
+   "err_dec": 0.319,
+   "no_parallax": {
+    "pm_ra": -3.036,
+    "pm_dec": 10.465,
+    "err_ra": 0.438,
+    "err_dec": 0.284
+   },
+   "parallax_fit": {
+    "parallax_arcsec": 0.171,
+    "err": 0.311,
+    "pm_ra": -2.39,
+    "pm_dec": 10.464,
+    "err_ra": 1.354,
+    "err_dec": 0.257,
+    "chi2": 26.9,
+    "dof": 3
+   }
+  }
+ ],
+ "combined": {
+  "bands": [
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "D5",
+   "D6"
+  ],
+  "pm_ra": -1.262,
+  "err_ra": 0.384,
+  "pm_dec": 10.261,
+  "err_dec": 0.152,
+  "chi2_ra": 2.56,
+  "chi2_dec": 1.63
+ },
+ "parallax_measured": {
+  "bands": [
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "D5",
+   "D6"
+  ],
+  "parallax_arcsec": 0.005,
+  "err": 0.261,
+  "scatter": 0.452,
+  "n_independent": 3,
+  "sigma": 0.0,
+  "distance_pc": null
+ }
+}

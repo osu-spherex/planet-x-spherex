@@ -1,0 +1,170 @@
+{
+ "center": {
+  "ra": 248.1672,
+  "dec": 66.755
+ },
+ "n_images": 2493,
+ "bands": [
+  {
+   "band": "D1",
+   "n_images": 584,
+   "mjd_min": 60832.4739,
+   "mjd_max": 61310.2912,
+   "n_epochs": 4,
+   "epochs": [
+    {
+     "mjd_min": 60832.4739,
+     "mjd_max": 60832.4784,
+     "n": 4
+    },
+    {
+     "mjd_min": 60860.5402,
+     "mjd_max": 60878.6082,
+     "n": 18
+    },
+    {
+     "mjd_min": 60916.3705,
+     "mjd_max": 60999.6368,
+     "n": 175
+    },
+    {
+     "mjd_min": 61227.4845,
+     "mjd_max": 61310.2912,
+     "n": 387
+    }
+   ]
+  },
+  {
+   "band": "D2",
+   "n_images": 89,
+   "mjd_min": 60834.7878,
+   "mjd_max": 61214.4537,
+   "n_epochs": 3,
+   "epochs": [
+    {
+     "mjd_min": 60834.7878,
+     "mjd_max": 60858.9091,
+     "n": 33
+    },
+    {
+     "mjd_min": 60997.7327,
+     "mjd_max": 61023.7386,
+     "n": 37
+    },
+    {
+     "mjd_min": 61212.1424,
+     "mjd_max": 61214.4537,
+     "n": 19
+    }
+   ]
+  },
+  {
+   "band": "D3",
+   "n_images": 574,
+   "mjd_min": 60789.8796,
+   "mjd_max": 61203.8609,
+   "n_epochs": 3,
+   "epochs": [
+    {
+     "mjd_min": 60789.8796,
+     "mjd_max": 60838.8645,
+     "n": 67
+    },
+    {
+     "mjd_min": 61035.2181,
+     "mjd_max": 61053.4146,
+     "n": 24
+    },
+    {
+     "mjd_min": 61079.4819,
+     "mjd_max": 61203.8609,
+     "n": 483
+    }
+   ]
+  },
+  {
+   "band": "D4",
+   "n_images": 584,
+   "mjd_min": 60832.4739,
+   "mjd_max": 61308.4619,
+   "n_epochs": 4,
+   "epochs": [
+    {
+     "mjd_min": 60832.4739,
+     "mjd_max": 60832.4784,
+     "n": 4
+    },
+    {
+     "mjd_min": 60860.5402,
+     "mjd_max": 60878.6082,
+     "n": 17
+    },
+    {
+     "mjd_min": 60916.3705,
+     "mjd_max": 60999.6368,
+     "n": 174
+    },
+    {
+     "mjd_min": 61227.4845,
+     "mjd_max": 61308.4619,
+     "n": 389
+    }
+   ]
+  },
+  {
+   "band": "D5",
+   "n_images": 89,
+   "mjd_min": 60834.7878,
+   "mjd_max": 61214.4537,
+   "n_epochs": 3,
+   "epochs": [
+    {
+     "mjd_min": 60834.7878,
+     "mjd_max": 60858.9091,
+     "n": 32
+    },
+    {
+     "mjd_min": 60997.7327,
+     "mjd_max": 61023.7386,
+     "n": 38
+    },
+    {
+     "mjd_min": 61212.1424,
+     "mjd_max": 61214.4537,
+     "n": 19
+    }
+   ]
+  },
+  {
+   "band": "D6",
+   "n_images": 573,
+   "mjd_min": 60789.8796,
+   "mjd_max": 61203.8609,
+   "n_epochs": 3,
+   "epochs": [
+    {
+     "mjd_min": 60789.8796,
+     "mjd_max": 60838.8645,
+     "n": 65
+    },
+    {
+     "mjd_min": 61035.2181,
+     "mjd_max": 61053.4146,
+     "n": 24
+    },
+    {
+     "mjd_min": 61079.4819,
+     "mjd_max": 61203.8609,
+     "n": 484
+    }
+   ]
+  }
+ ],
+ "epoch_gap_days": 20,
+ "source": {
+  "archive": "NASA/IPAC IRSA, SPHEREx Level 2 (TAP spherex.artifact + spherex.plane)",
+  "saved_utc": "2026-11-14T04:18:43Z",
+  "stale": false
+ },
+ "object": "rdra"
+}

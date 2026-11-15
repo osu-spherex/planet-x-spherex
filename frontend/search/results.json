@@ -1,0 +1,130 @@
+{
+  "about": "Search results on the real cubes, shown on the /method page (frontend/app/method) and in docs/METHOD_SEARCH.md. Every value is recomputed by search/numbers.test.ts, which fails if this file disagrees: the searches on every run, the Barnard, eps Ind B and Teegarden shuffles with P05_SHUFFLES=100, the WISE 0855 shuffles in search/significance.test.ts with P03_SHUFFLES=500. The combined-detector numbers ('multi') are recomputed by search/stackMulti.test.ts. Values are rounded as the tests print them. Motions in arcsec/yr, (RA cos Dec, Dec).",
+  "detectSnr": 5,
+  "alpha": 0.01,
+  "pmMax": 15,
+  "interpolation": { "zeroMotion": 0.00802, "catalogueMotion": 0.00775 },
+  "objects": [
+    {
+      "id": "wise0855",
+      "band": "D6",
+      "frames": 45,
+      "years": 1.01,
+      "step": 2.96,
+      "motions": 121,
+      "best": { "pmRa": -8.68, "pmDec": 0.2 },
+      "off": 0.94,
+      "snrBest": 20.96,
+      "snrZero": 18.74,
+      "shuffles": { "n": 500, "nExceed": 0, "max": 20.46, "p": 0.002 },
+      "verdict": "detected"
+    },
+    {
+      "id": "barnard",
+      "band": "D1",
+      "frames": 60,
+      "years": 1.02,
+      "step": 2.95,
+      "motions": 121,
+      "best": { "pmRa": 0, "pmDec": 11.81 },
+      "off": 1.66,
+      "snrBest": 2798.02,
+      "snrZero": 2685.81,
+      "shuffles": { "n": 100, "nExceed": 0, "max": 2678.36, "p": 0.0099 },
+      "verdict": "detected"
+    },
+    {
+      "id": "epsindb",
+      "band": "D2",
+      "frames": 93,
+      "years": 1.44,
+      "step": 2.08,
+      "motions": 225,
+      "best": { "pmRa": 3.82, "pmDec": -2.33 },
+      "off": 0.26,
+      "snrBest": 267.49,
+      "snrZero": 229.16,
+      "shuffles": { "n": 100, "nExceed": 0, "max": 229.25, "p": 0.0099 },
+      "verdict": "detected"
+    }
+  ],
+  "framesSeen": {
+    "about": "A-13: frames in which the target is seen by itself (summed flux around the search centre >= 5 x its noise). More than half: the frames are put on a common brightness before stacking.",
+    "barnard": { "seen": 60, "of": 60 },
+    "epsindb": { "seen": 93, "of": 93 },
+    "wise0855": { "seen": 10, "of": 45 },
+    "control": { "seen": 0, "of": 45 },
+    "blankNearWiseMax": { "seen": 7, "of": 45 }
+  },
+  "check": {
+    "about": "A-13: an object that played no part in designing the common-brightness rule. Gaia DR3 35227046884571776.",
+    "id": "teegarden",
+    "band": "D1",
+    "frames": 55,
+    "years": 1.02,
+    "step": 2.94,
+    "motions": 121,
+    "catalogue": { "pmRa": 3.429, "pmDec": -3.806 },
+    "best": { "pmRa": 4.66, "pmDec": -3.96 },
+    "off": 1.24,
+    "snrBest": 10260.33,
+    "snrZero": 8423.66,
+    "shuffles": { "n": 100, "nExceed": 0, "max": 8487.07, "p": 0.0099 },
+    "verdict": "detected"
+  },
+  "barnard": {
+    "about": "A-13: Barnard's Star as it was searched before the common-brightness rule (normalise 'off'). With the rule its best motion is 1.66 arcsec/yr from Gaia instead of 1.12 (grid step 2.95; the requirement is under 2). Why: its saturated core is missing from the images, so the summed brightness misses a varying part of the light, and the peak fit fails there, so the reported motion is the grid cell.",
+    "before": { "best": { "pmRa": -0.05, "pmDec": 9.53 }, "off": 1.12, "snrBest": 837.9, "snrZero": 360.62 }
+  },
+  "control": { "id": "wise0855_control", "band": "D6", "frames": 45, "snrBest": 2.02, "verdict": "none" },
+  "blank": {
+    "nearWise": { "regions": 8, "min": 2.32, "max": 4.05 },
+    "control": { "regions": 9, "min": 1.45, "max": 3.51 }
+  },
+  "epsIndB": {
+    "about": "Everything below is the search as it was before A-13 (frames stacked as they are, normalise 'off'): why Epsilon Indi B used to be only 'consistent'.",
+    "before": {
+      "best": { "pmRa": 2.97, "pmDec": -2.5 },
+      "off": 1.0,
+      "snrBest": 78.43,
+      "snrZero": 69.15,
+      "shuffles": { "n": 100, "nExceed": 6, "max": 84.36, "p": 0.0693 },
+      "verdict": "consistent"
+    },
+    "clipKeeps": { "kept": 4, "of": 93 },
+    "peakOverNoise": { "min": 27, "max": 1254 },
+    "plainMean": { "n": 20, "nExceed": 0, "z": 15.78 },
+    "defaultClipped": { "n": 20, "nExceed": 2, "z": 1.54 },
+    "pixelClipOff": { "wise0855": 7.65, "barnard": 2.38, "epsindb": 0.14 }
+  },
+  "multi": {
+    "about": "P-06, P-09: several detectors in one stack (search/stackMulti.ts): frames weighted by 1/noise^2 and stacked as they are, without the common-brightness rule of A-13. The site's default search is the rows in 'objects'; its Search panel offers D5+D6 only, for faint targets (viewer/Search.tsx). Recomputed by search/stackMulti.test.ts, which fails if this disagrees (shuffles: P09_SHUFFLES=100). A row with one detector is that detector through the same weighted stacking. 'off' is from the catalogue motion; 'peak' is the brightest pixel of the best stack, arcsec east and north of the search centre.",
+    "rows": [
+      { "id": "wise0855", "bands": ["D6"], "frames": 45, "snrBest": 24.21, "snrZero": 20.99, "best": { "pmRa": -8.83, "pmDec": -0.49 }, "off": 1.56, "peak": { "east": -3, "north": 0 } },
+      { "id": "wise0855", "bands": ["D5"], "frames": 48, "snrBest": 23.25, "snrZero": 19.47, "best": { "pmRa": -8.66, "pmDec": 1.06 }, "off": 0.73, "peak": { "east": -3, "north": 0 } },
+      { "id": "wise0855", "bands": ["D5", "D6"], "frames": 93, "snrBest": 28.62, "snrZero": 24.17, "best": { "pmRa": -8.75, "pmDec": 1.58 }, "off": 1.1, "peak": { "east": -3, "north": 0 } },
+      { "id": "wise0855", "bands": ["D1", "D2", "D3", "D4"], "frames": 165, "snrBest": 57.25, "snrZero": 54.42, "best": { "pmRa": 0.31, "pmDec": -1.36 }, "off": 8.56, "peak": { "east": -6, "north": 3 } },
+      { "id": "wise0855", "bands": ["D1", "D2", "D3", "D4", "D5", "D6"], "frames": 258, "snrBest": 55, "snrZero": 51.27, "best": { "pmRa": 0.12, "pmDec": -1.59 }, "off": 8.44, "peak": { "east": -6, "north": 3 } },
+      { "id": "epsindb", "bands": ["D2"], "frames": 93, "snrBest": 83.97, "snrZero": 72.83, "best": { "pmRa": 3.08, "pmDec": -3.44 }, "off": 1.27, "peak": { "east": -3, "north": 3 } },
+      { "id": "epsindb", "bands": ["D5"], "frames": 84, "snrBest": 335.88, "snrZero": 184.7, "best": { "pmRa": 3.05, "pmDec": -4.67 }, "off": 2.32, "peak": { "east": -3, "north": 3 } },
+      { "id": "epsindb", "bands": ["D1", "D2", "D3", "D4", "D5", "D6"], "frames": 457, "snrBest": 114.35, "snrZero": 78.25, "best": { "pmRa": 4.85, "pmDec": -2.36 }, "off": 0.9, "peak": { "east": -3, "north": 0 } }
+    ],
+    "neighbour": {
+      "about": "WISE 0855: the star that detectors D1-D4 show instead of the target (Gaia DR3 5756956644387831296; role A, data/cubes/wise0855/spectrum.json 'neighbour', issue #75). Arcsec east and north of the search centre. The six-detector stack peaks on it.",
+      "at": { "east": -7.92, "north": 2.22, "sep": 8.23, "bands": ["D1", "D2", "D3", "D4"] }
+    },
+    "shuffles": [
+      { "id": "wise0855", "bands": ["D5", "D6"], "n": 100, "nExceed": 0, "max": 26.36, "p": 0.0099, "moving": 28.62, "zero": 24.17, "verdict": "detected" },
+      { "id": "wise0855", "bands": ["D6"], "n": 100, "nExceed": 0, "max": 22.87, "p": 0.0099, "moving": 24.21, "zero": 20.99, "verdict": "detected" }
+    ],
+    "blank": {
+      "about": "WISE 0855 D5+D6 on the 8 regions 45 arcsec from the target that numbers.test.ts uses as blank sky for D6. One is not blank in D5: it holds a catalogued star (data/cubes/wise0855/catalog.json).",
+      "scores": [3.97, 3.01, 2.57, 2.91, 8.8, 4.29, 3.71, 2.44],
+      "above": [{ "region": 4, "star": "J085502.97-071341.9" }]
+    },
+    "control": {
+      "about": "The control field has a D6 cube only, so D5+D6 cannot be run on it. This is its D6 cube through the weighted stacking.",
+      "snrBest": 1.89
+    }
+  }
+}

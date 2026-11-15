@@ -1,0 +1,72 @@
+/* Look of the site (task A-18, direction "Infrared"). SPHEREx is an infrared telescope, so the
+   site speaks in the colours of heat: warm black, an ember accent, and ice for what is cold.
+
+   One rule gives the colours their meaning everywhere:
+       warm = later / now          cold = earlier / before
+   (the red and blue pair of "Compare visits", the site icon, the mark next to the title).
+
+   Shape: corners of 3 px, hairlines of 1 px, no shadows, no gradients, no background decoration;
+   small labels are mono capitals with letter spacing. Components take every colour from here. */
+
+:root {
+  color-scheme: dark;
+  /* surfaces */
+  --bg: #0e0b0c;
+  --surface: #171213;
+  --surface-2: #1f191a;
+  --line: #2e2426;
+  /* text. --fg and --muted pass WCAG AA (4.5:1) on all three surfaces. --faint does NOT (4.0:1
+     on --bg): it is for hairlines, ticks and disabled marks, never for text. */
+  --fg: #f2eae2;
+  --muted: #b0a196;
+  --faint: #7d6f67;
+  /* accents */
+  --warm: #ff7a3d; /* the accent: active tab, main button, the later image */
+  --gold: #ffc96b; /* numbers and highlighted values */
+  --cold: #7fd6e6; /* only the earlier image / the blue half of the pair; never links or buttons */
+  /* states, apart from the accents */
+  --ok: #8fd19e;
+  --warn: #ffc96b;
+  --bad: #ff6b6b;
+  --ok-line: #35553d;
+  --warn-line: #6b5630;
+  --bad-line: #6e3434;
+  --radius: 3px;
+  --display: var(--font-display), var(--font-plex-sans), system-ui, sans-serif;
+  --sans: var(--font-plex-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: var(--font-plex-mono), ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--warm);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* Bold is for headings; inside running text it is a medium weight, so pages do not shout. */
+strong,
+b {
+  font-weight: 600;
+}
+
+select,
+input,
+button {
+  font-family: inherit;
+}

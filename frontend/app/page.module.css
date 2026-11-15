@@ -1,0 +1,480 @@
+/* Home page (task A-18 over B-13): what the site does in one line, the five examples as cards,
+   then the images. The first screen has to answer "what is this and where do I start". */
+
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 14px 16px 48px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+/* Small line above the title: the challenge name, with the site's blue and red pair. */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Two dots side by side: where it was (blue) and where it is now (red). */
+.pair {
+  position: relative;
+  flex: none;
+  width: 17px;
+  height: 8px;
+}
+
+.pair::before,
+.pair::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pair::before {
+  left: 0;
+  background: var(--cold);
+}
+
+.pair::after {
+  right: 0;
+  background: var(--warm);
+}
+
+.title {
+  margin: 0 0 6px;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--muted);
+}
+
+.lead strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* ---- the six detectors as one strip of infrared light, 0.75 to 5 micrometres ---- */
+
+.bandsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+.bands {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* which light the chosen detector sees */
+.bandNow {
+  flex: none;
+  margin: 0;
+  padding-top: 4px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.bandNow .num {
+  font-family: var(--mono);
+  color: var(--gold);
+}
+
+.band {
+  flex-basis: 0;
+  min-width: 0;
+  padding: 3px 4px 2px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--line);
+  border-radius: 0;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.band:hover {
+  border-top-color: var(--faint);
+  color: var(--fg);
+}
+
+.band:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.bandOn,
+.bandOn:hover {
+  border-top-color: var(--warm);
+  color: var(--warm);
+}
+
+/* ---- "Start with an example": five cards ---- */
+
+.startRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+}
+
+/* The other way in: the position form is below the images. */
+.startOther {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--muted);
+  text-decoration-color: var(--faint);
+  text-underline-offset: 3px;
+}
+
+.startOther:hover {
+  color: var(--gold);
+}
+
+.startLabel {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.objects {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.object {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 8px 10px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.object:hover {
+  border-color: var(--faint);
+  background: var(--surface-2);
+}
+
+.object:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.active,
+.active:hover {
+  background: var(--surface-2);
+  border-color: var(--warm);
+}
+
+.objectName {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.objectKind {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.active .objectKind {
+  color: var(--muted);
+}
+
+.objectKind .num {
+  font-family: var(--mono);
+}
+
+/* ---- three things to try: one line above the viewer, never a window over the page ---- */
+
+.guide,
+.guideSpace {
+  min-height: 28px;
+  margin: 0 0 6px;
+}
+
+.guide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 600px;
+  padding: 3px 4px 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 0.82rem;
+}
+
+.guideSteps {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 2px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guideStep {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.guideN {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--faint);
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+.guideNext {
+  color: var(--fg);
+}
+
+.guideNext .guideN {
+  border-color: var(--warm);
+  color: var(--warm);
+}
+
+.guideDone .guideN {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.guideLink {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.guideLink:hover {
+  color: var(--gold);
+}
+
+.guideClose {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.guideClose:hover {
+  color: var(--fg);
+}
+
+.guideLink:focus-visible,
+.guideClose:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- below the images ---- */
+
+.panel {
+  max-width: 600px;
+  scroll-margin-top: 12px;
+}
+
+.heading {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.blurb {
+  margin: 0 0 6px;
+}
+
+.hint {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Embedded view (?embed=1): only the viewer, no page chrome. */
+.embed {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+/* B-13 (#84): images on the first screen. */
+.positionLine {
+  margin: 0 0 8px;
+}
+
+.positionLine p {
+  margin: 0 0 6px;
+}
+
+.viewerSlot {
+  position: relative;
+  max-width: 620px;
+  margin: 0 -10px 18px;
+  padding: 10px;
+}
+
+/* Corner marks of the viewer. */
+.tick {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 0 solid var(--faint);
+  pointer-events: none;
+}
+
+.tickTL {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.tickTR {
+  top: 0;
+  right: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.tickBL {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.tickBR {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Narrower than five cards fit: one row that scrolls sideways inside itself (not the page). Each
+   card is a little under half the row, so the third one is cut in half and shows there is more. */
+@media (max-width: 700px) {
+  .objects {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 42%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+  }
+
+  .object {
+    scroll-snap-align: start;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .header {
+    margin-bottom: 8px;
+  }
+
+  .bandsRow {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .bandNow {
+    font-size: 0.7rem;
+  }
+
+  .objects {
+    margin-bottom: 8px;
+  }
+
+  .lead {
+    font-size: 0.92rem;
+  }
+}

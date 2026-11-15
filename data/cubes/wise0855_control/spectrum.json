@@ -1,0 +1,474 @@
+{
+ "object": "wise0855_control",
+ "method": "aperture",
+ "unit": "mJy",
+ "note": "Brightness summed within 2.5 pixels (15 arcsec) of the source in every image, in mJy. No aperture correction is applied and the image of a star is wider at longer wavelengths, so the level can step at the boundaries between detectors; such steps are not corrected.",
+ "neighbour": null,
+ "bands": [
+  {
+   "band": "D6",
+   "n_images": 45,
+   "n_ok": 44,
+   "lam_min": 4.4048,
+   "lam_max": 4.9937,
+   "median_flux": -0.05752,
+   "median_snr": -1.5,
+   "n_found": 7,
+   "offset_arcsec": 5.83,
+   "detected": false,
+   "why_not": "no significant light at the position: the median of 44 points is -1.5 standard errors from zero and a source is found in 7 of 45 images"
+  }
+ ],
+ "points": [
+  {
+   "band": "D6",
+   "mjd": 61151.197933,
+   "epoch": 3,
+   "lam_um": 4.40484,
+   "flux": 0.01417,
+   "err": 0.18397,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.296807,
+   "epoch": 1,
+   "lam_um": 4.42146,
+   "flux": -0.06034,
+   "err": 0.21963,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61151.199425,
+   "epoch": 3,
+   "lam_um": 4.43751,
+   "flux": 0.06036,
+   "err": 0.1823,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.298548,
+   "epoch": 1,
+   "lam_um": 4.45325,
+   "flux": -0.00334,
+   "err": 0.19752,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61151.200918,
+   "epoch": 3,
+   "lam_um": 4.46872,
+   "flux": -0.04669,
+   "err": 0.18145,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.300041,
+   "epoch": 1,
+   "lam_um": 4.48614,
+   "flux": -0.07944,
+   "err": 0.21275,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61152.757304,
+   "epoch": 3,
+   "lam_um": 4.50011,
+   "flux": -0.27453,
+   "err": 0.17637,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.301533,
+   "epoch": 1,
+   "lam_um": 4.51899,
+   "flux": -0.19545,
+   "err": 0.20397,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61152.758796,
+   "epoch": 3,
+   "lam_um": 4.53297,
+   "flux": 0.03296,
+   "err": 0.19039,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.364776,
+   "epoch": 1,
+   "lam_um": 4.55147,
+   "flux": -0.23892,
+   "err": 0.21517,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61152.760288,
+   "epoch": 3,
+   "lam_um": 4.56831,
+   "flux": -0.10373,
+   "err": 0.18065,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.366268,
+   "epoch": 1,
+   "lam_um": 4.58568,
+   "flux": 0.34199,
+   "err": 0.33244,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61153.436457,
+   "epoch": 3,
+   "lam_um": 4.59948,
+   "flux": -0.20109,
+   "err": 0.19227,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.367761,
+   "epoch": 1,
+   "lam_um": 4.62027,
+   "flux": -0.31435,
+   "err": 0.22816,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61153.437949,
+   "epoch": 3,
+   "lam_um": 4.63375,
+   "flux": -0.83949,
+   "err": 0.18912,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.976991,
+   "epoch": 1,
+   "lam_um": 4.63857,
+   "flux": -0.16504,
+   "err": 0.22868,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61021.282827,
+   "epoch": 2,
+   "lam_um": 4.63875,
+   "flux": 0.11222,
+   "err": 0.1993,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61153.439442,
+   "epoch": 3,
+   "lam_um": 4.65731,
+   "flux": -0.72982,
+   "err": 0.19343,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60989.978484,
+   "epoch": 1,
+   "lam_um": 4.67313,
+   "flux": 0.10307,
+   "err": 0.23801,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61153.440934,
+   "epoch": 3,
+   "lam_um": 4.70067,
+   "flux": 0.12639,
+   "err": 0.42955,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61021.351418,
+   "epoch": 2,
+   "lam_um": 4.70741,
+   "flux": null,
+   "err": null,
+   "ok": false,
+   "why": "masked pixel in the aperture"
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.505109,
+   "epoch": 1,
+   "lam_um": 4.70762,
+   "flux": 0.03248,
+   "err": 0.23883,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61156.152716,
+   "epoch": 3,
+   "lam_um": 4.7344,
+   "flux": -0.29617,
+   "err": 0.20264,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61022.029133,
+   "epoch": 2,
+   "lam_um": 4.74197,
+   "flux": -0.0547,
+   "err": 0.21015,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.506601,
+   "epoch": 1,
+   "lam_um": 4.74203,
+   "flux": -0.00344,
+   "err": 0.248,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61156.154226,
+   "epoch": 3,
+   "lam_um": 4.77038,
+   "flux": 0.07012,
+   "err": 0.23441,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.508093,
+   "epoch": 1,
+   "lam_um": 4.77656,
+   "flux": -0.00225,
+   "err": 0.24889,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61156.085511,
+   "epoch": 3,
+   "lam_um": 4.80498,
+   "flux": -0.02308,
+   "err": 0.22489,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.509586,
+   "epoch": 1,
+   "lam_um": 4.8113,
+   "flux": -0.52276,
+   "err": 0.25523,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61168.984738,
+   "epoch": 3,
+   "lam_um": 4.81532,
+   "flux": 0.01388,
+   "err": 0.25169,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61160.770817,
+   "epoch": 3,
+   "lam_um": 4.81539,
+   "flux": -0.0527,
+   "err": 0.22575,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.57425,
+   "epoch": 1,
+   "lam_um": 4.84561,
+   "flux": -0.54726,
+   "err": 0.45723,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60800.834438,
+   "epoch": 0,
+   "lam_um": 4.85,
+   "flux": -0.53182,
+   "err": 0.2515,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61169.194223,
+   "epoch": 3,
+   "lam_um": 4.85007,
+   "flux": -0.29503,
+   "err": 0.25869,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.575742,
+   "epoch": 1,
+   "lam_um": 4.88175,
+   "flux": 0.16983,
+   "err": 0.2736,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61156.493181,
+   "epoch": 3,
+   "lam_um": 4.88532,
+   "flux": -0.23201,
+   "err": 0.23732,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61169.527653,
+   "epoch": 3,
+   "lam_um": 4.88545,
+   "flux": 0.22952,
+   "err": 0.26516,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.577234,
+   "epoch": 1,
+   "lam_um": 4.91767,
+   "flux": -0.18973,
+   "err": 0.29431,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61169.933208,
+   "epoch": 3,
+   "lam_um": 4.92163,
+   "flux": -0.02764,
+   "err": 0.2773,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61156.494673,
+   "epoch": 3,
+   "lam_um": 4.92193,
+   "flux": 0.28373,
+   "err": 0.24199,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.578727,
+   "epoch": 1,
+   "lam_um": 4.95374,
+   "flux": -0.35527,
+   "err": 0.30052,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60800.700028,
+   "epoch": 0,
+   "lam_um": 4.95766,
+   "flux": -0.16427,
+   "err": 0.27729,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 61171.09635,
+   "epoch": 3,
+   "lam_um": 4.95769,
+   "flux": 0.2303,
+   "err": 0.29658,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60993.912885,
+   "epoch": 1,
+   "lam_um": 4.9894,
+   "flux": -0.07009,
+   "err": 0.31768,
+   "ok": true,
+   "why": ""
+  },
+  {
+   "band": "D6",
+   "mjd": 60800.701521,
+   "epoch": 0,
+   "lam_um": 4.99367,
+   "flux": -0.55174,
+   "err": 0.2841,
+   "ok": true,
+   "why": ""
+  }
+ ]
+}

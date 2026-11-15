@@ -1,0 +1,21 @@
+# Render Blueprint for the backend (role C, task C-03). Setup steps: deploy/README.md.
+# Free plan, Oregon: tested 2026-11-10 with experiments/deploy_probe (145/512 MB RAM, cutouts
+# 1.5-2.3 s because Oregon is close to IRSA in California). Spec: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: osu-spherex-api
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    autoDeploy: true
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7            # same as the team's .venv (docs/progress/C.md)
+      - key: OSU_CORS_ORIGINS    # comma-separated; add the Vercel production URL here once it exists
+        value: http://localhost:3000,https://osu-spherex.vercel.app
+      - key: OSU_CORS_ORIGIN_REGEX   # Vercel preview deployments of the frontend project
+        value: ^https://osu-spherex[a-z0-9-]*\.vercel\.app$
